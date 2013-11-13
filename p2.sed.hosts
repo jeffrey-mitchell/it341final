@@ -1,0 +1,19 @@
+#!/bin/bash
+# sets up /etc/hosts with sed according to project 2
+
+/#inside virtual clients/a\
+10.0.0.135 itvm28-1.it.cs.umb.edu itvm28-1
+/#inside virtual clients/a\
+10.0.0.134 itvm27-1.it.cs.umb.edu itvm27-1
+/#inside virtual clients/a\
+10.0.0.133 itvm26-1.it.cs.umb.edu itvm26-1
+/#inside virtual clients/a\
+10.0.0.132 itvm25-1.it.cs.umb.edu itvm25-1
+/#inside virtual clients/a\
+10.0.0.131 itvm24-1.it.cs.umb.edu itvm24-1
+/#inside virtual clients/a\
+10.0.0.130 itvm23-1.it.cs.umb.edu itvm23-1
+/#inside virtual clients/a\
+10.0.0.129 itvm22-1.it.cs.umb.edu itvm22-1
+/#inside virtual clients/a\
+10.0.0.128 itvm21-1.it.cs.umb.edu itvm21-1
