@@ -1,6 +1,15 @@
 #!/bin/bash
 # sets up /etc/hosts with sed according to project 2
 
+#itvm21-1 local host goes after loopback
+/localhost/a\
+127.0.1.1 itvm21-1.it.cs.umb.edu itvm21-1
+
+#gateway
+/#gateway/a\
+10.0.0.1 it20.it.cs.umb.edu it20
+
+#inside virtual clients
 /#inside virtual clients/a\
 10.0.0.135 itvm28-1.it.cs.umb.edu itvm28-1
 /#inside virtual clients/a\
@@ -17,3 +26,21 @@
 10.0.0.129 itvm22-1.it.cs.umb.edu itvm22-1
 /#inside virtual clients/a\
 10.0.0.128 itvm21-1.it.cs.umb.edu itvm21-1
+
+#inside real clients
+/#inside real clients/a\
+10.0.0.191 it28.it.cs.umb.edu it28
+/#inside real clients/a\
+10.0.0.190 it27.it.cs.umb.edu it27
+/#inside real clients/a\
+10.0.0.189 it26.it.cs.umb.edu it26
+/#inside real clients/a\
+10.0.0.188 it25.it.cs.umb.edu it25
+/#inside real clients/a\
+10.0.0.187 it24.it.cs.umb.edu it24
+/#inside real clients/a\
+10.0.0.186 it23.it.cs.umb.edu it23
+/#inside real clients/a\
+10.0.0.185 it22.it.cs.umb.edu it22
+/#inside real clients/a\
+10.0.0.184 it21.it.cs.umb.edu it21
