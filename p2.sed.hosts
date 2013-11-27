@@ -2,7 +2,7 @@
 # sets up /etc/hosts with sed according to project 2
 
 #itvm21-1 local host goes after loopback
-/127.0.1.1/c\
+s/\<127\.0\.1\.1\>//g  #exact match only
 127.0.1.1 itvm21-1.it.cs.umb.edu itvm21-1
 
 #inside virtual clients
