@@ -7,6 +7,8 @@
 
 #gateway
 /#gateway/a\
+\n
+/#gateway/a\
 10.0.0.1 it20.it.cs.umb.edu it20
 
 #inside virtual clients
