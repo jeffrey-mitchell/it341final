@@ -2,7 +2,7 @@
 # sets up /etc/hosts with sed according to project 2
 
 #itvm21-1 local host goes after loopback
-/localhost/a\
+/127.0.1.1  itvm21-1/c\
 127.0.1.1 itvm21-1.it.cs.umb.edu itvm21-1
 
 #gateway
