@@ -1,9 +1,12 @@
 #!/bin/bash
-------------------------------
-/etc/network/interfaces
-------------------------------
-cp /etc/hosts /home/sysadmin/originalfiles
-------------------------------
-/etc/hosts
-------------------------------
+# This script configures the hosts file for the vm
+#
+
+#backs up /etc/hosts
+sudo cp /etc/hosts /home/sysadmin/originalfiles/hosts.orig
+
+#runs helper script that edits hosts
+sudo sed -f p2.sed.hosts /home/sysadmin/originalfiles/hosts.orig >/etc/hosts
+
+#restarts networking
 sudo /etc/init.d/networking restart
