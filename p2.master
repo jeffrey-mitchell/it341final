@@ -1,0 +1,9 @@
+#!/bin/bash
+------------------------------
+/etc/network/interfaces
+------------------------------
+cp /etc/hosts /home/sysadmin/originalfiles
+------------------------------
+/etc/hosts
+------------------------------
+sudo /etc/init.d/networking restart
