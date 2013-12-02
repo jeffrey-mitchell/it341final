@@ -4,9 +4,10 @@
 
 #backs up /etc/hosts
 sudo cp /etc/hosts /home/sysadmin/originalfiles/hosts.orig
+sudo cp /etc/hosts /home/sysadmin/originalfiles/hosts.prep
 
 #adds comments to hosts
-sudo sed -i '3 iinside virtual clients' /home/sysadmin/originalfiles/hosts.orig >/home/sysadmin/originalfiles/hosts.prep
+sudo sed -i '3 iinside virtual clients' /home/sysadmin/originalfiles/hosts.prep
 sudo sed -i '3 s/^/#/' /home/sysadmin/originalfiles/hosts.prep
 sudo sed -i '4 iinside virtual clients' /home/sysadmin/originalfiles/hosts.prep
 sudo sed -i '4 s/^/#/' /home/sysadmin/originalfiles/hosts.prep
