@@ -5,8 +5,14 @@
 #backs up /etc/hosts
 sudo cp /etc/hosts /home/sysadmin/originalfiles/hosts.orig
 
+#adds comments to hosts
+sed -i '3 iinside virtual clients' /home/sysadmin/originalfiles/hosts.orig >/home/sysadmin/originalfiles/hosts.prep
+sed -i '3 s/^/#/' /home/sysadmin/originalfiles/hosts.prep
+sed -i '4 iinside virtual clients' /home/sysadmin/originalfiles/hosts.prep
+sed -i '4 s/^/#/' /home/sysadmin/originalfiles/hosts.prep
+
 #runs helper script that edits hosts
-sudo sed -f p2.sed.hosts /home/sysadmin/originalfiles/hosts.orig >/etc/hosts
+#sudo sed -f p2.sed.hosts /TMP/hosts
 
 #restarts networking
-sudo /etc/init.d/networking restart
+#sudo /etc/init.d/networking restart
