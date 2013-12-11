@@ -17,7 +17,7 @@ sudo sed -i '4 s/^/#/' /home/sysadmin/originalfiles/hosts.prep
 sudo sed -f p2.sed.hosts /home/sysadmin/originalfiles/hosts.prep >/etc/hosts
 
 #moves host.prep to /etc/hosts
-#sudo mv /home/sysadmin/originalfiles/hosts.prep /etc/hosts
+sudo mv /home/sysadmin/originalfiles/hosts.prep /etc/hosts
 
 #restarts networking
-#sudo /etc/init.d/networking restart
+sudo /etc/init.d/networking restart
