@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#configures nsswitch.conf for NIS
+sudo cp /etc/nsswitch.conf /home/sysadmin/originalfiles/nsswitch.conf.orig
+sed -i 's/passwd: compat/passwd: compat nis/' /etc/nsswitch.conf
+sed -i 's/group: compat/group: compat nis/' /etc/nsswitch.conf
+sed -i 's/shadow: compat/shadow: compat nis/' /etc/nsswitch.conf
+sed -i 's/hosts: files dns/hosts: files dns nis/' /etc/nsswitch.conf
+
+#sets default domain to "it.cs.umb.edu"
+cp /etc/defaultdomain /home/sysadmin/originalfiles/defaultdomain.orig
+sed s/itvm21-1/it.cs.umb.edu/ /etc/defaultdomain
+
+sudo mkdir /home/jmit
+sudo service ypbind restart
+sudo sysv-rc-conf ypbind on
+sudo chown jmit /home/jmit
+sudo chgrp jmit /home/jmit
