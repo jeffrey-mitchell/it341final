@@ -8,7 +8,7 @@ sudo sed -i 's/compat/compat nis/g' /etc/nsswitch.conf
 sudo sed -i 's/files dns/files dns nis/' /etc/nsswitch.conf
 
 #sets the yp server
-cp /etc/yp.config /home/sysadmin/originalfiles/yp.conf.orig
+cp /etc/yp.conf /home/sysadmin/originalfiles/yp.conf.orig
 sed -i 'aypserver 10.0.0.1' /etc/yp.conf
 #sets default domain to "it.cs.umb.edu"
 cp /etc/defaultdomain /home/sysadmin/originalfiles/defaultdomain.orig
