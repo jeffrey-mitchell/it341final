@@ -1,0 +1,15 @@
+#!/bin/bash
+sudo mv /home /home.itvm21-1
+sudo mkdir /home
+
+#updates /etc/passwd with sysadmin's new home directory
+sudo cp /etc/passwd /home/sysadmin/originalfiles/passwd.orig
+sudo sed -i 's@:/home/sysadmin:@:/home.itvm21-1/sysadmin:@' /etc/passwd
+
+#exports home directory
+sudo cp /etc/exports /home/sysadmin/originalfiles/exports.orig
+sudo sed -i 'a@/home.itvm28-4 10.0.0.0/24(rw,sync,no_root_squash,no_subtree_check)@' /etc/exports
+
+#auto.home
+sudo cp /etc/auto.master /home/sysadmin/originalfiles/auto.master
+sed -i 's@+auto.master@/home /etc/auto.home@' /etc/auto.master   
