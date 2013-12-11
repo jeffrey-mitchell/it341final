@@ -1,21 +1,31 @@
 #!/bin/bash
 
 #configures nsswitch.conf for NIS
+echo starting nsswitch
 cp /etc/nsswitch.conf /home/sysadmin/originalfiles/nsswitch.conf.orig
 sudo sed -i 's/compat/compat nis/g' /etc/nsswitch.conf
 #sudo sed -i 's/compat/compat nis/' /etc/nsswitch.conf
 #sudo sed -i 's/compat/compat nis/' /etc/nsswitch.conf
 sudo sed -i 's/files dns/files dns nis/' /etc/nsswitch.conf
+echo nsswitch done
 
 #sets the yp server
+echo starting yp
 cp /etc/yp.conf /home/sysadmin/originalfiles/yp.conf.orig
 sed -i 'aypserver 10.0.0.1' /etc/yp.conf
+echo yp done
+
 #sets default domain to "it.cs.umb.edu"
+echo starting defaultdomain
 cp /etc/defaultdomain /home/sysadmin/originalfiles/defaultdomain.orig
 sudo sed -i s/itvm21-1/it.cs.umb.edu/ /etc/defaultdomain
+echo defaultdomain done
 
+echo making home dir
 sudo mkdir /home/jmit
+echo restarting yp
 sudo service ypbind restart
 sudo sysv-rc-conf ypbind on
+echo home permissions
 sudo chown jmit /home/jmit
 sudo chgrp jmit /home/jmit
