@@ -8,3 +8,5 @@
 sudo ./p2.master
 sudo ./p3.master
 sudo ./p4.master
+
+echo all scripts are finished.
