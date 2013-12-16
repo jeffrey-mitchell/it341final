@@ -1,21 +1,30 @@
 #!/bin/bash
 
 #configures nsswitch.conf for NIS
+echo Backing up nsswitch.conf...
 cp /etc/nsswitch.conf /home/sysadmin/originalfiles/nsswitch.conf.orig
+echo Configuring nsswitch.conf...
 sudo sed -i 's/compat/compat nis/g' /etc/nsswitch.conf
 #sudo sed -i 's/compat/compat nis/' /etc/nsswitch.conf
 #sudo sed -i 's/compat/compat nis/' /etc/nsswitch.conf
 sudo sed -i 's/files dns/files dns nis/' /etc/nsswitch.conf
 
 #sets the yp server
+echo Backing up yp.conf...
 cp /etc/yp.conf /home/sysadmin/originalfiles/yp.conf.orig
+echo Configuring yp.conf...
 sed -i '$ aypserver 10.0.0.1' /etc/yp.conf
 #sets default domain to "it.cs.umb.edu"
+echo Backing up defaultdomain...
 cp /etc/defaultdomain /home/sysadmin/originalfiles/defaultdomain.orig
-sudo sed -i s/itvm21-1/it.cs.umb.edu/ /etc/defaultdomain
+echo Configuring defaultdomain
+sudo sed -i s/$HOSTNAME/it.cs.umb.edu/ /etc/defaultdomain  #change $HOSTNAME to itvm21-1 if there are problems
 
+echo Making directory for jmit...
 sudo mkdir /home/jmit
+echo Restarting yp, this may take a while...
 sudo service ypbind restart
 sudo sysv-rc-conf ypbind on
+echo Setting permissions for jmit's directory...
 sudo chown jmit /home/jmit
 sudo chgrp jmit /home/jmit
