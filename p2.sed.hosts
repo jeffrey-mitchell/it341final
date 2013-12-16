@@ -1,4 +1,6 @@
 #!/bin/bash
+# Jeffrey Mitchell
+# IT341 Final Project - p2.sed.hosts
 # sets up /etc/hosts with sed according to project 2
 
 #itvm21-1 local host goes after loopback
