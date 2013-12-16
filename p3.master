@@ -1,13 +1,16 @@
 #!/bin/bash
 
-#configures nsswitch.conf for NIS
+#configures nsswitch.conf for NIS and DNS
 echo Backing up nsswitch.conf...
 cp /etc/nsswitch.conf /home/sysadmin/originalfiles/nsswitch.conf.orig
-echo Configuring nsswitch.conf...
+
+echo Configuring nsswitch.conf entries for NIS and DNS...
 sudo sed -i 's/compat/compat nis/g' /etc/nsswitch.conf
 #sudo sed -i 's/compat/compat nis/' /etc/nsswitch.conf
 #sudo sed -i 's/compat/compat nis/' /etc/nsswitch.conf
-sudo sed -i 's/files dns/files dns nis/' /etc/nsswitch.conf
+sudo sed -i 's/files dns/dns files nis/' /etc/nsswitch.conf
+
+
 
 #sets the yp server
 echo Backing up yp.conf...
