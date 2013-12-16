@@ -12,8 +12,8 @@ sudo sed -i 's@:/home/sysadmin:@:/home.itvm21-1/sysadmin:@' /etc/passwd
 echo Backing up exports...
 sudo cp /etc/exports /home.itvm21-1/sysadmin/originalfiles/exports.orig
 echo Adding home directories to exports...
-sudo sed -i 'a@/home.itvm21-1 10.0.0.0/24(rw,sync,no_root_squash,no_subtree_check)@' /etc/exports
-
+#sudo sed -i 'a@/home.itvm21-1 10.0.0.0/24(rw,sync,no_root_squash,no_subtree_check)@' /etc/exports
+echo "home.itvm21-1 10.0.0.0/24(rw,sync,no_root_squash,no_subtree_check" >>/etc/exports
 #auto.home
 echo Copying auto.home from it20...
 #scp -r it341@it.cs.umb.edu:/etc/auto.home /etc/auto.home #requires key with no passphrase set to work
