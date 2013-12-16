@@ -3,13 +3,23 @@ sudo mv /home /home.itvm21-1
 sudo mkdir /home
 
 #updates /etc/passwd with sysadmin's new home directory
+echo Backing up passwd...
 sudo cp /etc/passwd /home.itvm21-1/sysadmin/originalfiles/passwd.orig
+echo Setting new home directory for sysadmin...
 sudo sed -i 's@:/home/sysadmin:@:/home.itvm21-1/sysadmin:@' /etc/passwd
 
 #exports home directory
+echo Backing up exports...
 sudo cp /etc/exports /home.itvm21-1/sysadmin/originalfiles/exports.orig
+echo Adding home directories to exports...
 sudo sed -i 'a@/home.itvm21-1 10.0.0.0/24(rw,sync,no_root_squash,no_subtree_check)@' /etc/exports
 
 #auto.home
+echo Copying auto.home from it20...
+#scp -r it341@it.cs.umb.edu:/etc/auto.home /etc/auto.home #requires key with no passphrase set to work
+#sshpass -p '<password>' scp -r it341@it.cs.umb.edu:/etc/auto.home /etc/auto.home #uses sshpass
+
+echo Backing up auto.master
 sudo cp /etc/auto.master /home.itvm21-1/sysadmin/originalfiles/auto.master
+echo Configuring auto.master...
 sed -i 's@+auto.master@/home /etc/auto.home@' /etc/auto.master   
