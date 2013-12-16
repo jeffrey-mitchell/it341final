@@ -1,12 +1,11 @@
 #!/bin/bash
+# Jeffrey Mitchell
+# IT341 Final Project - p2.master
 # This script configures the hosts file for the vm
-#
 
 #backs up /etc/hosts
-#note: running sed on hosts.orig then piping results to host.prep doesn't seem to work
 echo Backing up hosts file...
 sudo cp /etc/hosts /home/sysadmin/originalfiles/hosts.orig
-#sudo cp /etc/hosts /home/sysadmin/originalfiles/hosts.prep
 
 #adds comments to hosts
 echo Configuring hosts file...
@@ -17,9 +16,6 @@ sudo sed -i '4 s/^/#/' /etc/hosts
 
 #runs helper script that edits hosts
 sudo sed -i -f p2.sed.hosts /etc/hosts
-
-#moves host.prep to /etc/hosts
-#sudo mv /home/sysadmin/originalfiles/hosts.prep /etc/hosts
 
 echo Restarting network...
 #restarts networking
