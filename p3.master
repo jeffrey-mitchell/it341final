@@ -1,4 +1,6 @@
 #!/bin/bash
+# Jeffrey Mitchell
+# IT341 Final Project - p3.master
 
 #configures nsswitch.conf for NIS and DNS
 echo Backing up nsswitch.conf...
