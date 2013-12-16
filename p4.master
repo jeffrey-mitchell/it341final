@@ -1,4 +1,6 @@
 #!/bin/bash
+# Jeffrey Mitchell
+# IT341 Final Project - p4.master
 sudo mv /home /home.itvm21-1
 sudo mkdir /home
 
