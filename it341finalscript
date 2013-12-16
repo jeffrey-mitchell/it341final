@@ -1,0 +1,10 @@
+#!/bin/bash
+# Jeffrey Mitchell
+# IT341 Final Project - it341final
+
+# Usage "echo <password> | sudo -S ./it341finalscript"
+# sudo password will be in command line history after running this, clear it
+
+sudo ./p2.master
+sudo ./p3.master
+sudo ./p4.master
